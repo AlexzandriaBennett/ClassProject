@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ↓ this is the description that shows up in the search engine ↓ -->
+    <meta name="description"
+          content="ABGradeManager system is a leading technology solution to maintain classroom, student, and assignment information.
+      Track information for all of your classrooms with ease" />
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/MainPage.css"/>
+</head>
+<body>
+    <section class="showcase">
+        <header>
+            <h2 class="logo">ABGradeManager</h2>
+            <div class="toggle"></div>
+        </header>
+        <video autoplay muted loop>
+        <source src="~/css/TeacherandStudents.mp4"/>
+        </video>
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>Welcome!</h2>
+            <h3>Please enter the classrooms</h3>
+            <a @Html.ActionLink("Enter", "Index", "Courses")</a>
+        </div>
+        <ul class="social">
+            <li>
+                <a target="_blank" href="https://facebook.com"><img src="https://i.ibb.co/x7P24fL/facebook.png" /></a>
+            </li>
+            <li>
+                <a target="_blank" href="https://twitter.com"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" /></a>
+            </li>
+            <li>
+                <a target="_blank"  href="https://instagram.com"><img src="https://i.ibb.co/ySwtH4B/instagram.png" /></a>
+            </li>
+        </ul>
+    </section>
+    <div class="menu">
+        <ul>
+            @*<li>@Html.Partial("_LoginPartial")</li>*@
+            <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+            <li>@Html.ActionLink("Students", "Index", "Students")</li>
+            <li>@Html.ActionLink("Staff", "Index", "Staffs")</li>
+            <li><a href="mailto:alexbennett12@live.com">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector(".toggle");
+        const showcase = document.querySelector(".showcase");
+
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.toggle("active");
+            showcase.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
